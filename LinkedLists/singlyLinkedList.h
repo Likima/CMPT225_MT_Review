@@ -4,24 +4,37 @@
 
 #pragma once
 
-class sll_Node { // Singly Linked List node
+#include <iostream>
+
+class Node {
   public:
-    sll_Node* next;
+    int data;
+    Node* next;
 
-    sll_Node();    // Default ctor
-    sll_Node(int); // Constructor for an int arg provided
-    ~sll_Node();
+    Node(int value) : data(value), next(nullptr) {}
+};
 
-    sll_Node(const sll_Node& other);
-    sll_Node& operator=(const sll_Node& other);
+class SinglyLinkedList { // Singly Linked List node
+  public:
+    SinglyLinkedList* next;
 
-    void Print();
-    bool IsEmpty();
-    bool InsertAtBeginning();
-    bool InsertAtEnd();
-    bool InsertAtIndex(int index);
+    SinglyLinkedList();    // Default ctor
+    SinglyLinkedList(int); // Constructor for an int arg provided
+    ~SinglyLinkedList();
 
-    int getSize();
+    SinglyLinkedList(const SinglyLinkedList& other);
+    SinglyLinkedList& operator=(const SinglyLinkedList& other);
+
+    void Print() const;
+    void Clear();
+
+    bool IsEmpty() const;
+
+    bool InsertAtBeginning(int num);
+    bool InsertAtEnd(int num);
+    bool InsertAtIndex(int index, int num);
+
+    int getSize() const;
     int removeAtBeginning();
     int removeAtEnd();
     int removeAtIndex(int index);
@@ -29,6 +42,6 @@ class sll_Node { // Singly Linked List node
     bool Swap(int index1, int index2);
 
   private:
-    int data;
-    sll_Node* head;
+    Node* head = nullptr;
+    Node* tail = nullptr;
 };
