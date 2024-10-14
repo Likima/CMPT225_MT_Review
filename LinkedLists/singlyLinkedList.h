@@ -16,7 +16,7 @@ class Node {
 
 class SinglyLinkedList { // Singly Linked List node
   public:
-    SinglyLinkedList* next;
+    Node* next;
 
     SinglyLinkedList();    // Default ctor
     SinglyLinkedList(int); // Constructor for an int arg provided

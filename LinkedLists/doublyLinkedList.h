@@ -18,8 +18,6 @@ class doublyLinkedList {
         int search(int data);              // Search for a node with the given data
         bool isEmpty() const;              // Check if the list is empty
         int getSize() const;               // Get the size of the list
-        void displayForward() const;       // Display list from head to tail
-        void displayBackward() const;      // Display list from tail to head
 
     private:
         struct Node {
