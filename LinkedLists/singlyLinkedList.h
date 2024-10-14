@@ -9,7 +9,7 @@
 class Node {
   public:
     int data;
-    Node* next;
+    mutable const Node *next;
 
     Node(int value) : data(value), next(nullptr) {}
 };
@@ -40,6 +40,7 @@ class SinglyLinkedList { // Singly Linked List node
     int removeAtIndex(int index);
 
     bool Swap(int index1, int index2);
+    [[nodiscard]] Node* getHead() const { return head; }
 
   private:
     Node* head = nullptr;

@@ -8,4 +8,5 @@ add_executable(mt1_Study_Guide main.cpp
         LinkedLists/doublyLinkedList.cpp
         Queues/deque.cpp
         Queues/queue.cpp
-        Stacks/stack_linkedList.cpp)
+        Stacks/stack_linkedList.cpp
+        Queues/circular_queue.cpp)

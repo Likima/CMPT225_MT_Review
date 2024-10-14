@@ -27,8 +27,8 @@ Purpose: used for clearing the list manually without destructor
 Arguments: None
 Running Time: O(n)
   Explanation: For loop looping through the linked list
-Cost function: 3n + 2
-  Explanation: 3n : recurses through 3 commands n times.
+Cost function: 4n + 2
+  Explanation: 4n : recurses through 4 commands n times.
                2  : 2 other commands
 Function Description:
   a temp variable is used to recurse through the list such that we
@@ -125,12 +125,12 @@ Purpose: When the linked list goes out of scope, this is called to free dynamica
 Arguments: None
 Running Time: O(n)
   Explanation: calls Clear, which is O(n). Refer to Function Overview of Clear
-Cost function: 3n+2
+Cost function: 4n+2
   Explanation: refer to Function Overview of Clear
 Function Description: calls clear, which frees all dynamically allocated memory
 ---------------------- </FUNCTION OVERVIEW> -----------------------
 */
-SinglyLinkedList::~SinglyLinkedList() { Clear() }
+SinglyLinkedList::~SinglyLinkedList() { Clear(); }
 
 
 /*
@@ -142,8 +142,8 @@ Purpose: creates a DEEP COPY* of the passed linked list (other)
 Arguments: SinglyLinkedList& other : copy things from this
 Running Time: O(n)
   Explanation: iterates through the linked list
-Cost function: 4n + 1
-  Explanation: 4 commands happen in the loop, one happens outside the loop
+Cost function: 6n + 1
+  Explanation: 6 commands happen in the loop, one happens outside the loop
 Function Description: Deep copies a passed linked list. Implements the use
   of the tail, which may not be tested. If the tail is not implemented, you can
   use temp nodes to iterate and copy like in Assignment 1.
@@ -180,7 +180,7 @@ Purpose: creates a DEEP COPY* of the passed linked list (other)
 Arguments: SinglyLinkedList& other : copy things from this
 Running Time: O(n)
   Explanation: iterates through the linked list
-Cost function: (3n + 3) + (3n + 2) = 6n + 5
+Cost function: (4n + 3) + (3n + 2) = 7n + 5
   Explanation: 3 commands happen in the loop, 3 happen outside the loop. + Clear cost function
 Function Description: Deep copies a passed linked list. Does NOT implement the use
   of the tail. Usually if the tail is provided, you would use it, but I didn't for the sake
@@ -215,8 +215,8 @@ Purpose: prints out a linked list
 Arguments: None
 Running Time: O(n)
   Explanation: iterates through linked list
-Cost function: 2n + 2
-  Explanation: 2 commands inside loop and 2 outside loop
+Cost function: 3n + 2
+  Explanation: 3 commands inside loop and 2 outside loop
 Function Description: prints out a linked list
 ---------------------- </FUNCTION OVERVIEW> -----------------------
 */
@@ -274,7 +274,7 @@ bool SinglyLinkedList::InsertAtIndex(int index, const int num){
   newNode->next = current->next;
   current->next = newNode;
 
-  return newNode != nullptr;
+  return head != nullptr;
 }
 
 int SinglyLinkedList::getSize() const {

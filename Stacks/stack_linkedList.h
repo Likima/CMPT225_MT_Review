@@ -10,13 +10,15 @@ class Stack {
 public:
     Stack();               // Constructor
     ~Stack();              // Destructor
+    Stack(const Stack& other);
 
-    void push(int data);             // Push an element onto the stack
-    void pop();                      // Pop the top element off the stack
-    int top() const;                 // Get the top element
-    bool isEmpty() const;            // Check if the stack is empty
-    int getSize() const;             // Get the current size of the stack
+    void push(int data) const;             // Push an element onto the stack
+    void print() const;
+    int pop();                      // Pop the top element off the stack
+    [[nodiscard]] int top() const;                 // Get the top element
+    [[nodiscard]] bool isEmpty() const;            // Check if the stack is empty
+    [[nodiscard]] int getSize() const;             // Get the current size of the stack
 
 private:
-    sll_Node* head;
+    SinglyLinkedList* ll{};
 };
