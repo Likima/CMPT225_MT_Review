@@ -34,13 +34,14 @@ class SinglyLinkedList { // Singly Linked List node
     bool InsertAtEnd(int num);
     bool InsertAtIndex(int index, int num);
 
-    int getSize() const;
+    [[nodiscard]] int getSize() const;
     int removeAtBeginning();
     int removeAtEnd();
     int removeAtIndex(int index);
 
     bool Swap(int index1, int index2);
     [[nodiscard]] Node* getHead() const { return head; }
+    [[nodiscard]] Node* getTail() const { return tail; }
 
   private:
     Node* head = nullptr;

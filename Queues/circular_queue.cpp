@@ -22,7 +22,7 @@ circular_queue::circular_queue(const circular_queue& other) {
     rear_idx = other.rear_idx;
 }
 
-void circular_queue::enqueue(int value) {
+void circular_queue::enqueue(const int value) {
     if (is_full()) {
         std::cout<<"Queue is full"<<std::endl;
         return;
@@ -37,9 +37,9 @@ int circular_queue::dequeue() {
         std::cout<<"Queue is empty"<<std::endl;
         return -1;
     }
-    rear_idx = (rear_idx - 1) % capacity;
+    front_idx = (front_idx + 1) % capacity;
     size--;
-    return c[front_idx];
+    return c[(front_idx - 1) % capacity];
 }
 
 bool circular_queue::is_empty() const {
